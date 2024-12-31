@@ -1,0 +1,769 @@
+@font-face {
+  font-family: 'apple';
+  src: url('fonts/h1/AppleGaramond.ttf');
+}
+
+
+
+/* Barre de navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-bottom: 20px;
+}
+
+
+nav a,
+.burger a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'apple', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav a:hover,
+.burger a:hover {
+  color: #A79E9E;
+}
+
+
+/* Menu défilant du Carto */
+.submenu {
+  position: absolute;
+  background-color: black;
+  padding: 10px 0;
+  display: none;
+  width: 100%;
+
+}
+
+.submenu a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: normal;
+}
+
+.navs {
+  position: relative;
+}
+
+.navs:hover .submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.burger {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+
+/* Sous format ordinateur */
+@media screen and (min-width:769px) {
+  .burger {
+    display: none;
+  }
+
+  nav {
+    background-color: rgb(129, 124, 124);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navs:hover .submenu {
+    align-items: center;
+  }
+
+  .footer-item ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+
+/* Sous format téléphone */
+@media screen and (max-width:768px) {
+  nav {
+    display: none;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .burger:hover .burger-menu {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navs:hover .submenu {
+    align-items: start;
+  }
+
+  .submenu {
+    position: relative;
+  }
+
+  .accueil #imgGrand {
+    display: none;
+  }
+
+  .accueil #imgPetit {
+    display: block;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse;
+  }
+
+  .footer-item:nth-of-type(1) p {
+    text-align: center;
+  }
+
+  .footer-item:nth-of-type(2),
+  .footer-item:nth-of-type(3) p {
+    display: none;
+  }
+
+}
+
+
+
+/* MAIN */
+main {
+  padding: 100 px;
+}
+
+body {
+  /*background-color: #ebebeb;*/
+  background-image: url("IMAGES/marbre-back.png");
+  margin: 0;
+  padding: 0;
+}
+
+.accueil {
+  /* vh = pourcentage en fonction de la taille de la fenetre, permet à l'accueil de prendre la taille de la fenetre pour l'utilisateur */
+  height: 85vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accueil p {
+  font-family: 'apple', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media screen and (max-width:444px) {
+  .accueil #imgGrand {
+    display: none;
+  }
+
+  .accueil #imgPetit {
+    display: block;
+  }
+}
+
+@media screen and (min-width:444px) {
+  .accueil #imgGrand {
+    display: block;
+  }
+
+  .accueil #imgPetit {
+    display: none;
+  }
+
+}
+
+.pestel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.pestel article {
+  margin: 40px;
+  text-align: justify;
+}
+
+.pestel article h2 {
+  text-decoration: underline;
+  font-family: system-ui;
+}
+
+.pestel article p {
+  font-family: sans-serif;
+  text-indent: 20px;
+}
+
+.pestel>div>article {
+  background-color: #c0bcbc;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* vw = pourcentage en fonction de la largeur de la fenetre */
+.analyse .pestel div:nth-child(odd) article {
+  margin-left: 20vw;
+  position: relative;
+  left: 0;
+}
+
+.analyse .pestel div:nth-child(even) article {
+  margin-right: 20vw;
+  position: relative;
+  right: 0;
+}
+
+fieldset {
+  margin-top: 20px;
+  margin: 0 auto;
+  width: 50%;
+  font-family: 'apple', 'Segoe UI', Tahoma, sans-serif;
+}
+
+textarea {
+  width: 260px;
+  height: 35px;
+}
+
+.fieldset-1,
+.fieldset-2 {
+  margin-bottom: 2%;
+  background-color: #C0BCBC;
+  box-shadow: 2px 2px 8px rgba(114, 99, 99, 0.5);
+}
+
+/* Footer */
+footer {
+  background-color: rgb(110, 110, 110);
+  color: white;
+  padding: 0px 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.co {
+  color: grey;
+}
+
+.footer-item {
+  margin-bottom: 10px;
+}
+
+.footer-item h2 {
+  font-size: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-item p,
+.footer-item ul {
+  margin-bottom: 15px;
+  font-family: 'apple', Arial, Helvetica, sans-serif;
+}
+
+
+
+.footer-item ul li a {
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
+.footer-item ul li a:hover {
+  color: #A79E9E
+;
+}
+
+footer .social-icons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer .social-icons a {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  color: #ffffff;
+  text-align: center;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+footer .social-icons img {
+  margin-top: 2px;
+  width: 40px;
+  height: 40px;
+}
+
+footer .social-icons a:hover {
+  background-color: #A79E9E;
+}
+
+footer .bold-text {
+  font-weight: bold;
+  font-size: 12px; /* Ajustez cette valeur pour la rendre plus petite */
+}
+
+
+/* Style général du body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8; /* Couleur du fond */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Style des bulles */
+.bubble {
+  max-width: 700px; /* Augmentation de la largeur maximale */
+  padding: 20px; /* Plus d'espace interne */
+  margin: 5px auto; /* Réduction de l'espacement vertical */
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  background-color: #d3d3d3; /* Couleur de fond */
+  color: black; /* Couleur du texte */
+  position: relative; /* Nécessaire pour le décalage */
+  line-height: 1.8; /* Ajout d'un espacement entre les lignes */
+}
+
+/* Style pour les titres dans les bulles */
+.bubble h2 {
+  margin-top: 0; /* Supprime la marge supérieure */
+  font-size: 20px; /* Taille du titre plus grande */
+}
+
+/* Bulles alignées à gauche */
+.bubble-left {
+  margin-left: 0; /* Alignement à gauche */
+  margin-right: auto; /* Supprime l'espacement à droite */
+  transform: translateX(-10px); /* Décalage léger vers la gauche */
+}
+
+/* Bulles alignées à droite */
+.bubble-right {
+  margin-left: auto; /* Supprime l'espacement à gauche */
+  margin-right: 0; /* Alignement à droite */
+  transform: translateX(10px); /* Décalage léger vers la droite */
+}
+
+/* Ajustement des paragraphes */
+.bubble p {
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime le padding éventuel */
+  line-height: 1.8; /* Espacement entre les lignes pour les paragraphes */
+}
+
+/* Optionnel : Conteneur principal */
+main {
+  display: flex;
+  flex-direction: column; /* Organise les bulles en colonne */
+  gap: 5px; /* Espacement réduit entre les bulles */
+}
+
+/* Conteneur principal */
+.navs {
+  position: relative; /* Nécessaire pour positionner le sous-menu */
+  display: inline-block;
+}
+
+/* Sous-menu */
+.submenu {
+  display: none; /* Masque le menu par défaut */
+  position: absolute; /* Permet de positionner le menu par rapport au parent */
+  background-color: #ffffff; /* Couleur de fond des items */
+  border: 1px solid #ccc; /* Bordure autour du sous-menu */
+  min-width: 200px; /* Largeur minimale pour que les items soient alignés */
+  z-index: 1000; /* Pour s'assurer que le menu reste au-dessus d'autres éléments */
+}
+
+/* Items du sous-menu */
+.submenu div {
+  padding: 10px; /* Espacement autour du texte */
+  text-align: left; /* Alignement à gauche */
+  white-space: nowrap; /* Empêche les sauts de ligne */
+  border-bottom: 1px solid #ddd; /* Ajoute une séparation entre les items */
+}
+
+.submenu div:last-child {
+  border-bottom: none; /* Retire la bordure pour le dernier élément */
+}
+
+/* Apparence au survol */
+.navs:hover .submenu {
+  display: block; /* Affiche le sous-menu lorsque la souris est sur "Cartographie" */
+}
+
+.submenu div:hover {
+  background-color: #f0f0f0; /* Change la couleur de fond au survol */
+}
+
+/* Lien dans le sous-menu */
+.submenu a {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #000; /* Couleur du texte */
+  display: block; /* Rend chaque lien cliquable sur toute la zone du rectangle */
+}
+
+
+/* Sous-menu */
+.submenu {
+  display: none; /* Masque le sous-menu par défaut */
+  position: absolute; /* Positionne le sous-menu par rapport au parent */
+  background-color: #ffffff; /* Couleur de fond */
+  border: 1px solid #ccc; /* Bordure pour délimiter le menu */
+  white-space: nowrap; /* Empêche les sauts de ligne dans les items */
+  z-index: 1000; /* Pour que le menu soit au-dessus d'autres éléments */
+  width: auto; /* Adapte la largeur automatiquement au contenu */
+  min-width: 150px; /* Définit une largeur minimale pour l'esthétique */
+}
+
+/* Items du sous-menu */
+.submenu div {
+  padding: 10px; /* Ajoute de l'espace autour du texte */
+  text-align: left; /* Aligne le texte à gauche */
+  border-bottom: 1px solid #ddd; /* Ajoute une séparation entre les items */
+  box-sizing: border-box; /* Inclut les bordures et marges dans la largeur */
+}
+
+.submenu div:last-child {
+  border-bottom: none; /* Supprime la bordure pour le dernier item */
+}
+
+/* Lien dans le sous-menu */
+.submenu a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #000; /* Définit la couleur du texte */
+  display: block; /* Rend chaque lien cliquable sur toute la zone */
+}
+
+/* Affichage au survol */
+.navs:hover .submenu {
+  display: block; /* Affiche le sous-menu au survol */
+}
+
+/* Au survol des items */
+.submenu div:hover {
+  background-color: #f0f0f0; /* Change de couleur au survol */
+}
+
+.cartographie {
+  cursor: default; /* Empêche le clic, mais garde un style similaire */
+  color: white; /* Hérite la couleur des autres liens */
+  font-weight: bold; /* Met en gras, comme les autres boutons */
+  text-decoration: none; /* Enlève tout effet de soulignement */
+  font-size: 1.2em;
+}
+
+.noeudDebat {
+  cursor: default; /* Empêche le clic, mais garde un style similaire */
+  color: white; /* Hérite la couleur des autres liens */
+  font-weight: bold; /* Met en gras, comme les autres boutons */
+  text-decoration: none; /* Enlève tout effet de soulignement */
+  font-size: 1.2em;
+}
+
+.vert{
+  color: #4CD9A1;
+}
+.blue {
+  color: #2D9BF0;
+}
+.violet {
+  color: #B736FF;
+}
+.orange {
+  color: #EC9B6D;
+}
+
+.groupe-acteurs1 {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: #ddfefc;
+}
+
+.groupe-acteurs2 {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: #ddeefe;
+}
+
+.groupe-acteurs3 {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: #e7ddfe;
+}
+
+.groupe-acteurs4 {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: #feebdd;
+}
+
+.groupe-acteurs h2 {
+  color: #2c3e50;
+  margin-bottom: 1em;
+}
+
+.groupe-acteurs p {
+  line-height: 1.6;
+  color: #34495e;
+}
+
+/* frise chronologique 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 80%;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #ddd;
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0078d7;
+  border: 4px solid white;
+  z-index: 1;
+}
+.timeline-item:nth-child(odd)::before {
+  right: -10px;
+}
+.timeline-item:nth-child(even)::before {
+  left: -10px;
+}
+.timeline-content {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.timeline-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+.timeline-content p {
+  margin: 0;
+  font-size: 1em;
+  color: #666;
+}
+  
+*/
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 90%;
+  max-width: 800px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 2px solid rgb(1, 1, 1);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -6px;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -6px;
+}
+
+.timeline-content {
+  background: rgb(205, 188, 168);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Align circles exactly on the line */
+.timeline-item:nth-child(odd)::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even)::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item {
+      width: 100%;
+      text-align: center;
+      padding-left: 40px;
+      padding-right: 40px;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+      left: 0;
+  }
+
+  .timeline-item::before {
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+  }
+
+  .timeline-content {
+      text-align: left;
+  }
+}
+
+/* textes */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+section {
+  margin-bottom: 2rem;
+}
+section h2 {
+  font-size: 1.5rem;
+  color: #6c63ff;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin: 0.5rem 0;
+} 
