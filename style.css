@@ -17,7 +17,7 @@ header {
 }
 
 
-nav a,
+/*nav a,
 .burger a {
   color: white;
   padding: 5px;
@@ -30,7 +30,7 @@ nav a,
 nav a:hover,
 .burger a:hover {
   color: #A79E9E;
-}
+}*/
 
 
 /* Menu défilant du Carto */
