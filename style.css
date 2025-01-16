@@ -767,3 +767,24 @@ section h2 {
 p {
   margin: 0.5rem 0;
 } 
+
+/* Styles généraux */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  background-color: #f0f0f0; /* Couleur de fond douce */
+}
+
+img {
+  max-width: 90%; /* L'image occupe jusqu'à 90% de la largeur de l'écran */
+  max-height: 80%; /* L'image occupe jusqu'à 80% de la hauteur de l'écran */
+  object-fit: contain; /* L'image conserve ses proportions */
+  display: block;
+  margin: auto; /* Assure un centrage supplémentaire */
+  border: 2px solid #ccc; /* Optionnel : bordure pour mieux visualiser l'image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel : effet d'ombre */
+}
